@@ -7,18 +7,24 @@ const Content = () => {
         const int =Math.floor(Math.random()*3);
         return Names[int];
        }
+       
+       const [count , setCount]= useState(99);
 
-       const handleChange = ()=>{
-        alert("hello");
+       function increment(){
+        setCount(count + 1)
        }
-       const handleChange1 = ()=>{
-        alert("hello santhosh");
+
+       function decrement(){
+        setCount(count - 1)
        }
   return (
-    <main>
-    <p>Hey This is {HandleNamechange()}</p>
-    <button onDoubleClick={handleChange1} type="button" className="btn-outline-success">Primary</button>
-    </main>
+   <main>
+    <p>College friends:{HandleNamechange()}</p>
+    <button onClick={increment}>+</button>
+    <span>{count}</span>
+    <button onClick={decrement}>-</button>
+
+   </main>
   )
 }
 
