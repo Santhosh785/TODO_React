@@ -1,28 +1,22 @@
-import React from 'react'
+import React, { use } from 'react'
 import { useState } from 'react';
 
 const Content = () => {
-    function HandleNamechange(){
+  
+  const [Name , setName]=useState("Santhosh")
+    function HandleNameChange(){
         const Names=['Santhosh','Gokul','Sybil'];
         const int =Math.floor(Math.random()*3);
-        return Names[int];
+         setName(Names[int]);
        }
        
-       const [count , setCount]= useState(99);
 
-       function increment(){
-        setCount(count + 1)
-       }
-
-       function decrement(){
-        setCount(count - 1)
-       }
   return (
    <main>
-    <p>College friends:{HandleNamechange()}</p>
-    <button onClick={increment}>+</button>
-    <span>{count}</span>
-    <button onClick={decrement}>-</button>
+    <p>College friends:{Name}</p>
+    <button onClick={HandleNameChange}>change</button>
+
+
 
    </main>
   )
