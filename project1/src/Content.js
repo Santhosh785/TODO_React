@@ -25,16 +25,20 @@ const Content = () => {
  const  handleChange=(id)=>{
    const listItems = items.map((item)=>item.id===id ? {... item ,checked:!item.checked}:item)
    setItems(listItems)
+   localStorage.setItem("todo_list", JSON.stringify
+  (listItems))
  }
 
  const handleDelete=(id)=>{
   const listItems = items.filter((item)=>item.id!==id)
   setItems(listItems)
+  localStorage.setItem("todo_list", JSON.stringify
+  (listItems))
  }
 
   return (
    <main>
-
+    {(items.length) ?(
     <ul>
       {items.map((item) =>(
         <li className="item" key={item.id}>
@@ -43,7 +47,9 @@ const Content = () => {
            type="checkbox"
            checked={item.checked} 
             />
-            <label>{item.item}</label>
+            <label
+            style={(item.checked)?{textDecoration:'line-through'}:null}
+            onDoubleClick={()=>handleChange(item.id)}>{item.item}</label>
             <FaTrash 
             onClick={()=>handleDelete(item.id)} 
             role="button"
@@ -51,6 +57,9 @@ const Content = () => {
         </li>
       ))}
     </ul>
+    ):(
+      <p> Your List Is Empty </p>
+    )}
     
    </main>
   )
