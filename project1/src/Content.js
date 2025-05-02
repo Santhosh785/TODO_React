@@ -1,23 +1,57 @@
 import React, { use } from 'react'
 import { useState } from 'react';
+import { FaTrash } from "react-icons/fa6";
 
 const Content = () => {
-  
-  const [Name , setName]=useState("Santhosh")
-    function HandleNameChange(){
-        const Names=['Santhosh','Gokul','Sybil'];
-        const int =Math.floor(Math.random()*3);
-         setName(Names[int]);
-       }
-       
+
+  const [items,setItems]=useState(
+    [{
+    id:1,
+    checked:true,
+    item:"practice coding"
+  },
+  {
+    id:2,
+    checked:false,
+    item:"practice German"
+  },
+  {
+    id:3,
+    checked:true,
+    item:"Learn react"
+  }
+])
+
+ const  handleChange=(id)=>{
+   const listItems = items.map((item)=>item.id===id ? {... item ,checked:!item.checked}:item)
+   setItems(listItems)
+ }
+
+ const handleDelete=(id)=>{
+  const listItems = items.filter((item)=>item.id!==id)
+  setItems(listItems)
+ }
 
   return (
    <main>
-    <p>College friends:{Name}</p>
-    <button onClick={HandleNameChange}>change</button>
 
-
-
+    <ul>
+      {items.map((item) =>(
+        <li className="item" key={item.id}>
+          <input
+          onChange={()=>handleChange(item.id)}
+           type="checkbox"
+           checked={item.checked} 
+            />
+            <label>{item.item}</label>
+            <FaTrash 
+            onClick={()=>handleDelete(item.id)} 
+            role="button"
+            />
+        </li>
+      ))}
+    </ul>
+    
    </main>
   )
 }
