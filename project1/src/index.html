@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aavin Order Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+        background-color: #f9f9f9;
+      }
+      h1,
+      h2 {
+        margin: 0;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header h1 {
+        color: red;
+      }
+      .header h2 {
+        color: #0066cc;
+      }
+      .total {
+        color: green;
+        font-size: 1.5em;
+      }
+      .milk-limit {
+        font-size: 0.9em;
+        color: #555;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #f0f0f0;
+      }
+      input[type="number"] {
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Saturday</h1>
+      <h2>May 3, 2025</h2>
+      <div class="total">Total: ₹10,104.78</div>
+    </div>
+    <div class="milk-limit">
+      Milk Limit: <strong>195.25L</strong> | 24L (min)
+    </div>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Mor</th>
+        <th>Eve</th>
+        <th>Subtotal</th>
+      </tr>
+      <tr>
+        <td>TM 500</td>
+        <td>₹20.00</td>
+        <td><input type="number" value="0" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹0.00</td>
+      </tr>
+      <tr>
+        <td>SGM 450</td>
+        <td>₹25.00</td>
+        <td><input type="number" value="5" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹125.00</td>
+      </tr>
+      <tr>
+        <td>COW 500</td>
+        <td>₹22.00</td>
+        <td><input type="number" value="230" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹5,060.00</td>
+      </tr>
+      <tr>
+        <td>COW 200</td>
+        <td>₹10.00</td>
+        <td><input type="number" value="70" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹700.00</td>
+      </tr>
+      <tr>
+        <td>FCM 500</td>
+        <td>₹30.00</td>
+        <td><input type="number" value="84" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹2,520.00</td>
+      </tr>
+      <tr>
+        <td>FCM 1000</td>
+        <td>₹60.00</td>
+        <td><input type="number" value="22" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹1,320.00</td>
+      </tr>
+      <tr>
+        <td>Curd 120</td>
+        <td>₹8.30</td>
+        <td><input type="number" value="15" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹124.50</td>
+      </tr>
+      <tr>
+        <td>Curd 500</td>
+        <td>₹31.91</td>
+        <td><input type="number" value="8" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹255.28</td>
+      </tr>
+      <tr>
+        <td>Curd 5000</td>
+        <td>₹354.36</td>
+        <td><input type="number" value="0" /></td>
+        <td><input type="number" value="0" /></td>
+        <td>₹0.00</td>
+      </tr>
+    </table>
+  </body>
+</html>
