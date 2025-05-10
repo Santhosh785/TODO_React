@@ -156,8 +156,8 @@ button {
 
 button:focus, 
 button:hover {
-  /* color: white; */
-  /* background-color: limegreen; */
+  color: white; 
+  background-color: grey; 
   outline: none;
 }
 
