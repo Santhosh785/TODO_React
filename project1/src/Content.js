@@ -6,7 +6,7 @@ const Content = ({items,handleChange,handleDelete}) => {
 
   
   return (
-   <main>
+   <>
 
     {(items.length) ?(
       <ListItems
@@ -18,7 +18,7 @@ const Content = ({items,handleChange,handleDelete}) => {
       <p> Your List Is Empty </p>
     )}
     
-   </main>
+   </>
   )
 }
 
