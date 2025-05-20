@@ -1,33 +1,29 @@
-import React, { useRef } from 'react'
-import { FaPlus } from 'react-icons/fa6'
+import React, { useRef } from 'react';
+import { FaPlus } from 'react-icons/fa6';
 
-const AddItem = ({newItem,setnewItem,handleSumbit}) => {
-
-  const inputref = useRef()
+const AddItem = ({ newItem, setnewItem, handleSumbit }) => {
+  const inputRef = useRef();
 
   return (
-    <form className='addForm' onSubmit={handleSumbit}>
-        <label htmlFor="addItem">AddItem</label>
-        <input 
+    <form className="addForm" onSubmit={handleSumbit}>
+      <label htmlFor="addItem">Add Item</label>
+      <input
         autoFocus
-        ref={inputref}
+        ref={inputRef}
         type="text"
-        placeholder='Add Item'
-        id="addItem" 
+        placeholder="Add Item"
+        id="addItem"
         value={newItem}
-        onChange={(e)=>setnewItem(e.target.value)}
-        />
-        <button
-        type='sumbit'
-        aria-label='Add Item'
-        onClick={()=>inputref.current.focus()}
-        >
-            <FaPlus/>
-
-        </button>
+        onChange={(e) => setnewItem(e.target.value)}
+      />
+      <button
+        type="submit"
+        aria-label="Add Item"
+      >
+        <FaPlus />
+      </button>
     </form>
+  );
+};
 
-  )
-}
-
-export default AddItem
+export default AddItem;
